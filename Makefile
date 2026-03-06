@@ -16,13 +16,13 @@
 # Building with a preinstalled docker container is recommended.
 # Install by running:
 #
-#   docker pull riscvintl/riscv-docs-base-container-image:latest
+#   docker pull ghcr.io/riscv/riscv-docs-base-container-image:latest
 #
 
 DOCS := riscv-privileged riscv-unprivileged
 
 DATE ?= $(shell date +%Y-%m-%d)
-DOCKER_IMG := riscvintl/riscv-docs-base-container-image:latest
+DOCKER_IMG := ghcr.io/riscv/riscv-docs-base-container-image:latest
 ifneq ($(SKIP_DOCKER),true)
     DOCKER_IS_PODMAN = \
         $(shell ! docker -v 2>&1 | grep podman >/dev/null ; echo $$?)
